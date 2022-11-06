@@ -63,9 +63,9 @@ class Dog
             WHERE name = ?
             LIMIT 1
         SQL
-    DB[:conn].execute(sql, name).map do |row|
-    self.new_from_db(row)
-    end.first
+        DB[:conn].execute(sql, name).map do |row|
+        self.new_from_db(row)
+        end.first
     end
 
     def self.find(id)
@@ -75,9 +75,9 @@ class Dog
             WHERE id = ?
             LIMIT 1
         SQL
-    DB[:conn].execute(sql, id).map do |row|
-    self.new_from_db(row)
-    end.first
+        DB[:conn].execute(sql, id).map do |row|
+        self.new_from_db(row)
+        end.first
     end
 
     def update
@@ -86,7 +86,7 @@ class Dog
             SET name = ?, breed = ?
             WHERE id = ?
         SQL
-    #updates the song id, name and breed
-    DB[:conn].execute(sql, self.name, self.breed, self.id)
+        #updates the song id, name and breed
+        DB[:conn].execute(sql, self.name, self.breed, self.id)
     end
 end
